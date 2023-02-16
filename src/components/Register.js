@@ -25,7 +25,7 @@ const Register = () => {
     return (
             <>
             <Container className="mt-5 d-flex justify-content-center">
-            <Card style={{width: '22rem', height: '23rem'}} className="rounded border border-warning border-2">
+            <Card style={{width: '23rem', height: '25rem'}} className="rounded border border-warning border-2">
                 <CardBody >
                 <h1 className="text-center">Register</h1>
                 <Input
