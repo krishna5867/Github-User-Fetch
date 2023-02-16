@@ -29,6 +29,7 @@ const Register = () => {
                 <CardBody >
                 <h1 className="text-center">Register</h1>
                 <Input
+                type="email"
                     className='mt-5'
                     placeholder="Email"
                     value={registerEmail}
@@ -37,6 +38,7 @@ const Register = () => {
                     }}
                 />
                 <Input
+                type="password"
                     className='mt-4'
                     placeholder="Password"
                     value={registerPassword}

@@ -12,7 +12,7 @@ const Navbar = () => {
     };
 
 return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style={{width:'100vw'}}>
         <div className="container-fluid">
             <Link className="navbar-brand mx-4" to="/"><h3> <b>GitHub</b></h3></Link>
             <button

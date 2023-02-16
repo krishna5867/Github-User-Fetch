@@ -42,6 +42,7 @@ function App() {
                     <CardBody>
                         <h1 className="text-center">Login</h1>
                         <Input
+                        type="text"
                             placeholder="Enter Registered Email Here..."
                             className='mt-5'
                             value={loginEmail}
@@ -50,6 +51,7 @@ function App() {
                             }}
                         />
                         <Input
+                        type="password"
                             className='mt-4'
                             placeholder="Enter Password..."
                             value={loginPassword}
