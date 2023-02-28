@@ -12,8 +12,8 @@ const Navbar = () => {
     };
 
 return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style={{width:'100vw'}}>
-        <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-4" style={{width:'100vw'}}>
+        <div className="container">
             <Link className="navbar-brand mx-4" to="/"><h3> <b>GitHub</b></h3></Link>
             <button
                 className="navbar-toggler"
@@ -34,7 +34,7 @@ return (
                     <Link className="nav-link active mt-2" aria-current="page" to="/"><strong>{user?.email}</strong></Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link active" aria-current="page" to="">
+                    <Link className="nav-link active" aria-current="page" to="/">
                     <button className='btn btn-warning text-dark rounded mx-2' onClick={handleSignout}><b>Logout</b></button></Link>
                 </li>
                 </>): (<>

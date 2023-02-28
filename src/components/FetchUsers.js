@@ -17,13 +17,14 @@ const FetchUsers = () => {
             // Fetch user repos
             const { data: reposData } = await axios.get(`https://api.github.com/users/${input}/repos`);
 
-            // Update state variables
             setData(userData);
             setRepo(reposData);
         } catch (error) {
-            console.error(error);
-        }
+            if (error.response && error.response.status === 404) {
+                alert("User not found!");
+            }
     };
+}
 
 
     return (

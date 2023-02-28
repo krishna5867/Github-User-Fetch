@@ -12,15 +12,19 @@ const Register = () => {
     const navigate = useNavigate();
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
-
+    const [error, setError] = useState("");
+console.log(error);
     const handleRegister = () => {
-        createUserWithEmailAndPassword(
-            auth,
-            registerEmail,
-            registerPassword
-        ).then(auth => console.log("User Successfully Registered"))
-        navigate('/login')
-            .catch(err => console.log(err));
+        if(registerEmail !== "" && registerPassword !== ""){
+            createUserWithEmailAndPassword(auth,registerEmail,registerPassword)
+            .then(() => {
+                navigate("/login");
+            })
+            .catch((error) => {
+                let errMsg = error.code.split("auth/")[1];
+                setError(errMsg);
+            });
+        }
     };
     return (
             <>
@@ -28,6 +32,7 @@ const Register = () => {
             <Card style={{width: '23rem', height: '25rem'}} className="rounded border border-warning border-2">
                 <CardBody >
                 <h1 className="text-center">Register</h1>
+                {error !== "" ?<div className="text-danger text-center">{error}</div>: null}
                 <Input
                 type="email"
                     className='mt-5'
@@ -56,3 +61,12 @@ const Register = () => {
 }
 
 export default Register;
+
+
+// createUserWithEmailAndPassword(
+//     auth,
+//     registerEmail,
+//     registerPassword
+// ).then(auth => alert("User Successfully Registered"))
+// navigate('/login')
+//     .catch(err => console.log(err));
