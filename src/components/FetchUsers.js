@@ -58,9 +58,9 @@ const FetchUsers = () => {
                                         <Card key={item.id} className="mt-2 rounded border border-1 border-warning">
                                             <div className='p-3'>
                                                 Repository Name- &nbsp;{item.name} <br />
-                                                Repo Description- &nbsp;{item.description == null ? "Description not available" : "{item.description}"} <br />
+                                                Repo Description- &nbsp;{item.description == null ? "Description not available" : `${item.description}`} <br />
                                                 Repo Language- &nbsp;{item.language} <br />
-                                                Repo Created- &nbsp;{moment(item.created).format("DD-MM-YYYY")} <br />
+                                                Repo Created- &nbsp;{moment(item.created_at).format("DD-MM-YYYY")} <br />
                                                 <a href={item.html_url} target="-blank">{item.html_url}</a>
                                             </div>
                                         </Card>
